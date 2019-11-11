@@ -2,12 +2,23 @@
 
 html {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.button {
+  border-radius: 0.2em;
+  box-shadow: 0 0.05em 0.25em 0 rgba(0,0,0,0.5);
+  border: none;
 }
 
 .container-fluid {
@@ -25,27 +36,109 @@ html {
   margin-right: -15px;
 }
 
-$column-sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 $screen-sizes: (
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  md: 720px,
+  lg: 1024px,
 );
 
+$pd-mg: (
+  p: padding,
+  m: margin,
+);
+
+$directions: (
+  r: right,
+  l: left,
+  t: top,
+  b: bottom,
+);
+
+$sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 2rem,
+  6: 3rem,
+  auto: auto
+);
+
+@for $column-size from 1 through 12 {
+  .col-#{$column-size} {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 percentage($column-size/12);
+    max-width: percentage($column-size/12);
+  }
+}
+
+@for $order from 0 through 12 {
+  .order-#{$order} {
+    order: $order;
+  }
+}
+
+@each $element, $tag in $pd-mg {
+  @each $direction, $tag2 in $directions {
+    @each $size, $value in $sizes {
+      .#{$element}#{$direction}-#{$size} {
+        #{$tag}-#{$tag2}: $value;
+      }
+    }
+  }
+}
+
+.border {
+  border: solid;
+}
+
+.border-0 {
+  border: none;
+}
+
+@each $direction, $tag2 in $directions {
+  .border-#{$direction} {
+    border-#{$tag2}: solid;
+  }
+
+  .border-#{$direction}-0 {
+    border-#{$tag2}: none;
+  }
+}
+
 @each $screen-size, $screen-resolution in $screen-sizes {
-  @each $column-size in $column-sizes {
+  @for $column-size from 1 through 12 {
     .col-#{$screen-size}-#{$column-size} {
       width: 100%;
       padding-left: 15px;
       padding-right: 15px;
     }
+  }
 
-    @media (min-width: #{$screen-resolution}) {
+  @media (min-width: #{$screen-resolution}) {
+    @for $column-size from 1 through 12 {
       .col-#{$screen-size}-#{$column-size} {
         flex: 0 0 percentage($column-size/12);
         max-width: percentage($column-size/12);
       }
     }
+
+    @for $order from 0 through 12 {
+      .order-#{$screen-size}-#{$order} {
+        order: $order;
+      }
+    }
+
+    @each $element, $tag in $pd-mg {
+      @each $direction, $tag2 in $directions {
+        @each $size, $value in $sizes {
+          .#{$element}#{$direction}-#{$screen-size}-#{$size} {
+            #{$tag}-#{$tag2}: $value;
+          }
+        }
+      }
+    }
+
   }
 }
