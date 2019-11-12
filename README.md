@@ -13,7 +13,7 @@ In this project we used CSS3, the [SCSS](https://sass-lang.com/documentation/syn
 ## Our project
 
 This project was divided in two parts:
-* The first one is the framework, that can be found in https://github.com/elshaka/Design-Your-Own-Grid-based-Framework/ (**For Microverse's TSE: its pull request is [here](https://github.com/elshaka/Design-Your-Own-Grid-based-Framework/pull/1)**).
+* The first one is the framework, that can be found in https://github.com/elshaka/Design-Your-Own-Grid-based-Framework/.
 * The second is the cloned website, found in https://github.com/phalado/Odin-Project-Clone with a live version in [here](https://raw.githack.com/phalado/Odin-Project-Clone/feature-website/index.html)
 
 ## Usage
