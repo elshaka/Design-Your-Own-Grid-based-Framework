@@ -21,7 +21,7 @@ a {
   border: none;
 }
 
-.container-fluid {
+.container, .container-fluid {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -120,6 +120,10 @@ $sizes: (
   }
 
   @media (min-width: #{$screen-resolution}) {
+    .container {
+      max-width: $screen-resolution;
+    }
+
     @for $column-size from 1 through 12 {
       .col-#{$screen-size}-#{$column-size} {
         flex: 0 0 percentage($column-size/12);

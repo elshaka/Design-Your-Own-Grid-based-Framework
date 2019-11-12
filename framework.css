@@ -62,7 +62,7 @@ a {
   box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.5);
   border: none; }
 
-.container-fluid {
+.container, .container-fluid {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -517,6 +517,9 @@ a {
   padding-right: 15px; }
 
 @media (min-width: 720px) {
+  .container {
+    max-width: 720px; }
+
   .col-md-1 {
     flex: 0 0 8.3333333333%;
     max-width: 8.3333333333%; }
@@ -904,6 +907,9 @@ a {
   padding-right: 15px; }
 
 @media (min-width: 1024px) {
+  .container {
+    max-width: 1024px; }
+
   .col-lg-1 {
     flex: 0 0 8.3333333333%;
     max-width: 8.3333333333%; }
