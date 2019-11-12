@@ -80,8 +80,11 @@ $sizes: (
 }
 
 @each $element, $tag in $pd-mg {
-  @each $direction, $tag2 in $directions {
-    @each $size, $value in $sizes {
+  @each $size, $value in $sizes {
+    .#{$element}-#{$size} {
+      #{$tag}: $value;
+    }
+    @each $direction, $tag2 in $directions {
       .#{$element}#{$direction}-#{$size} {
         #{$tag}-#{$tag2}: $value;
       }
@@ -131,8 +134,11 @@ $sizes: (
     }
 
     @each $element, $tag in $pd-mg {
-      @each $direction, $tag2 in $directions {
-        @each $size, $value in $sizes {
+      @each $size, $value in $sizes {
+        .#{$element}-#{$screen-size}-#{$size} {
+          #{$tag}: $value;
+        }
+        @each $direction, $tag2 in $directions {
           .#{$element}#{$direction}-#{$screen-size}-#{$size} {
             #{$tag}-#{$tag2}: $value;
           }
