@@ -14,13 +14,13 @@ In this project we used CSS3, the [SCSS](https://sass-lang.com/documentation/syn
 
 This project was divided in two parts:
 * The first one is the framework, that can be found in https://github.com/elshaka/Design-Your-Own-Grid-based-Framework/.
-* The second is the cloned website, found in https://github.com/phalado/Odin-Project-Clone with a live version in [here](https://raw.githack.com/phalado/Odin-Project-Clone/feature-website/index.html)
+* The second is the cloned website, found in https://github.com/phalado/Odin-Project-Clone with a live version in [here](https://raw.githack.com/phalado/Odin-Project-Clone/master/index.html)
 
 ## Usage
 
 To use our framework just paste the link below in the head of your index's html.
 
-`<link rel="stylesheet" type="text/css" href="https://raw.githack.com/elshaka/Design-Your-Own-Grid-based-Framework/feature-framework/framework.css">` 
+`<link rel="stylesheet" type="text/css" href="https://raw.githack.com/elshaka/Design-Your-Own-Grid-based-Framework/master/framework.css">` 
 
 ## Contributors
 
